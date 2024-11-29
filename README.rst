@@ -20,7 +20,7 @@ Linux
 | ``mkdir build && cd build``
 |
 | Then, build the project using cmake:
-| ``cmake ../ && make ./``
+| ``cmake ../ && make``
 
 --------
 Windows

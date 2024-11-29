@@ -1,3 +1,5 @@
+.. image:: icon.svg
+
 *****
 MEGA
 *****
@@ -14,7 +16,11 @@ Building
 Linux
 ------
 
-passing...
+| Make a build directory in the root of the project and enter it:
+| ``mkdir build && cd build``
+|
+| Then, build the project using cmake:
+| ``cmake ../ && make ./``
 
 --------
 Windows

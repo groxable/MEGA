@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/MEGA.dir/src/window.cpp.o -o MEGA  -lSDL2 -lSDL2_image -lSDL2 -lSDL2_image 

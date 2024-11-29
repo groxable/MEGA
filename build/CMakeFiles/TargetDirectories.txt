@@ -1,3 +1,0 @@
-/home/samuel/projects/cpp-projects/MEGA/build/CMakeFiles/MEGA.dir
-/home/samuel/projects/cpp-projects/MEGA/build/CMakeFiles/edit_cache.dir
-/home/samuel/projects/cpp-projects/MEGA/build/CMakeFiles/rebuild_cache.dir

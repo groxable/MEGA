@@ -3,9 +3,18 @@
 cmake_minimum_required(VERSION 3.5)
 project(MEGA)
 
-add_executable(${PROJECT_NAME} src/window.cpp)
+set(SOURCES
+	src/start.cpp
+)
+
+add_executable(${PROJECT_NAME} ${SOURCES})
 
 message("Processing CMakeLists.txt")
+
+target_include_directories(${PROJECT_NAME}
+    PRIVATE 
+        ${PROJECT_SOURCE_DIR}/headers
+)
 
 INCLUDE(FindPkgConfig)
 

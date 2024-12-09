@@ -10,5 +10,5 @@ using namespace std;
 
 int main(int argc, char **argv) {
 	Window* w = new Window();
-	w.Create(WNAME, WIDTH, HEIGHT);
+	w -> Create(WNAME, WIDTH, HEIGHT);
 }

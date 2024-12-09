@@ -5,29 +5,18 @@
 
 using namespace std;
 
-enum class LogType {
-	ERROR, RUN
-};
+/*
+ *	enum class LogType {
+ *		ERROR, WARNING, INFO	TODO: add log time and log types.
+ *	};
+ *
+ */
 
 extern void WriteLog(LogType type, const string &logMessage) {
-	ofstream errorFile("ErrorLog.txt", ios::app);
-	ofstream runtimeLogFile("RuntimeLog.txt", ios::app);
-	switch (type) {
-	case LogType::ERROR:
-		const char *ERRORFILEPATH = "../Logs/LastErrors.txt";
+	ofstream logFile("Log.txt", ios::app);
+	const char *LOGFILEPATH = "../Logs/Log.txt";
 
-		errorFile << logMessage.c_str() << std::endl;
-		errorFile.close();
-		//Print to screen
-		cout << logMessage.c_str() << endl;
-		break;
-	case LogType::RUN:
-		const char *LOGFILEPATH = "../Logs/LastLog.txt";
-
-		runtimeLogFile << logMessage.c_str() << endl;
-		runtimeLogFile.close();
-		//Print to screen
-		cout << logMessage.c_str() << endl;
-		break;
-	}
+	logFile << logMessage.c_str() << endl;
+	logFile.close();
+	cout << logMessage.c_str() << endl;
 }

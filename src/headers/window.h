@@ -11,7 +11,6 @@ class Window {
 public:
 	Window();
 	~Window();
-
 	int Create(string windowName, int screenWidth, int screenHeight);
 	int GetScreenWidth() const {
 		return m_screenWidth;
@@ -28,11 +27,11 @@ private:
 };
 
 Window::Window() {
-	SDL_Init(SDL_INIT_EVERYTHING);
+	SDL_Init (SDL_INIT_EVERYTHING);
 }
 
 Window::~Window() {
-	SDL_DestroyWindow(m_SDL_Window);
+	if(m_SDL_Window) SDL_DestroyWindow(m_SDL_Window);
 	SDL_Quit();
 }
 

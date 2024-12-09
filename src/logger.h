@@ -10,10 +10,10 @@ using namespace std;
  *
  */
 
-class Exception
-{
+class Exception {
 public:
-	Exception(const string &Message) : reason(Message) {};
+	Exception(const string &Message) :
+			reason(Message) {};
 	const string reason;
 };
 

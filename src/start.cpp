@@ -8,6 +8,9 @@
 using namespace std;
 
 int main(int argc, char **argv) {
-	Window* w = new Window();
-	w -> Create("test", WIDTH, HEIGHT, SDL_WINDOW_SHOWN);
+	Window *w = new Window();
+	w->Create("test", WIDTH, HEIGHT, SDL_WINDOW_SHOWN);
+
+	while (true) {
+	};
 }

@@ -10,7 +10,8 @@ class Window {
 public:
 	Window();
 	~Window();
-	int Create(string windowName, int screenWidth, int screenHeight, Uint32 flags);
+	int Create(string windowName, int screenWidth, int screenHeight,
+			Uint32 flags);
 	int GetScreenWidth() const {
 		return m_screenWidth;
 	}
@@ -32,11 +33,13 @@ Window::Window() {
 }
 
 Window::~Window() {
-	if(m_SDL_Window) SDL_DestroyWindow(m_SDL_Window);
+	if (m_SDL_Window)
+		SDL_DestroyWindow(m_SDL_Window);
 	SDL_Quit();
 }
 
-int Window::Create(string windowName, int screenWidth, int screenHeight, Uint32 flags) {
+int Window::Create(string windowName, int screenWidth, int screenHeight,
+		Uint32 flags) {
 	try {
 		// Open an SDL window
 		m_SDL_Window = SDL_CreateWindow(windowName.c_str(),
@@ -46,7 +49,7 @@ int Window::Create(string windowName, int screenWidth, int screenHeight, Uint32 
 			throw Exception("[E] SDL Window could not be created!");
 
 		// Set the background color to blue
-		glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
+		// glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
 
 	} catch (Exception e) {
 		// Write Log

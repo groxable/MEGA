@@ -8,7 +8,8 @@ class Window {
 public:
 	Window();
 	~Window();
-	int Create(string windowName, int screenWidth, int screenHeight, Uint32 flags);
+	int Create(string windowName, int screenWidth, int screenHeight,
+			Uint32 flags);
 	int GetScreenWidth() const;
 	int GetScreenHeight() const;
 	void SetWindowName();

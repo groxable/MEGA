@@ -1,5 +1,4 @@
 #include "window.h"
-#include "logger.h"
 #include <iostream>
 
 #define WIDTH 1280
@@ -7,10 +6,12 @@
 
 using namespace std;
 
-int main(int argc, char **argv) {
-	Window *w = new Window();
-	w->Create("test", WIDTH, HEIGHT, SDL_WINDOW_SHOWN);
+int main(int argc, char **argv)
+{
+    Window *w = new Window();
+    w->Create("test", WIDTH, HEIGHT, SDL_WINDOW_SHOWN);
 
-	while (true) {
-	};
+    while (true)
+    {
+    };
 }

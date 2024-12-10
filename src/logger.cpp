@@ -4,11 +4,12 @@
 
 using namespace std;
 
-extern void WriteLog(string &logMessage) {
-	ofstream logFile("Log.txt", ios::app);
-	const char *LOGFILEPATH = "../Logs/Log.txt";
+extern void WriteLog(string &logMessage)
+{
+    ofstream logFile("log.txt", ios::app);
+    const char *LOGFILEPATH = "../logs/log.txt";
 
-	logFile << logMessage.c_str() << endl;
-	logFile.close();
-	cout << logMessage.c_str() << endl;
+    logFile << logMessage.c_str() << endl;
+    logFile.close();
+    cout << logMessage.c_str() << endl;
 }

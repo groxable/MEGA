@@ -16,29 +16,17 @@ Building
 Linux
 ------
 
-| Make a build directory in the root of the project and enter it:
-|
-| ``mkdir build && cd build``
-|
-| Then, build the project using cmake:
-|
-| ``cmake ../ && make``
-|
+| *Building:* ``mkdir build && cd build; cmake ../ && make``
+| *Running:* ``./MEGA``
 
 --------
 Windows
 --------
 
-passing...
+*In progress...*
 
 --------
 Android
 --------
 
-passing...
-
-=============
-Contributing
-=============
-
-See "CONTRIBUTING.rst" file (in progress...).
+*In progress...*

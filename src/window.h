@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <SDL2/SDL.h>
+#include <GL/gl.h>
 
 using namespace std;
 
@@ -19,4 +20,5 @@ private:
     unsigned int m_screenWidth;
     unsigned int m_screenHeight;
     string m_windowName;
+    SDL_GLContext m_glContext;
 };

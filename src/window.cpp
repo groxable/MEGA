@@ -12,33 +12,30 @@ public:
     Window();
     ~Window();
     int Create(string windowName, int screenWidth, int screenHeight, Uint32 flags);
-    int GetScreenWidth() const
-    {
-        return m_screenWidth;
-    }
-    int GetScreenHeight() const
-    {
-        return m_screenHeight;
-    }
+    int GetScreenWidth() const;
+    int GetScreenHeight() const;
     void SetWindowName();
     void SwapBuffer();
-
+	
 private:
     SDL_Window *m_SDL_Window;
     unsigned int m_screenWidth;
     unsigned int m_screenHeight;
     string m_windowName;
+    SDL_GLContext m_glContext;
 };
 
 Window::Window()
 {
     SDL_Init (SDL_INIT_EVERYTHING);
+    SDL_GLContext m_glContext = SDL_GL_CreateContext(m_SDL_Window);
 }
 
 Window::~Window()
 {
     if (m_SDL_Window)
         SDL_DestroyWindow(m_SDL_Window);
+	SDL_GL_DeleteContext(m_glContext);
     SDL_Quit();
 }
 
@@ -47,26 +44,23 @@ int Window::Create(string windowName, int screenWidth, int screenHeight, Uint32 
     try
     {
         // Open an SDL window
-	m_SDL_Window = SDL_CreateWindow
-            (
-            windowName.c_str(),
-            SDL_WINDOWPOS_CENTERED,
-            SDL_WINDOWPOS_CENTERED,
-            screenWidth,
-            screenHeight,
-            SDL_WINDOW_SHOWN
-            );
+		m_SDL_Window = SDL_CreateWindow
+       	(
+            	windowName.c_str(),
+            	SDL_WINDOWPOS_CENTERED,
+            	SDL_WINDOWPOS_CENTERED,
+            	screenWidth,
+            	screenHeight,
+            	SDL_WINDOW_SHOWN
+        );
                 
 	if (m_SDL_Window == nullptr)
             throw Exception("[E] SDL Window could not be created!");
 
-            // Set the background color to blue
-            // glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
-
 	} catch (Exception e)
         {
             // Write Log
-            WriteLog(e.reason);
+            // WriteLog(e.reason);
         }   
 
     return 0;
@@ -75,4 +69,14 @@ int Window::Create(string windowName, int screenWidth, int screenHeight, Uint32 
 void Window::SwapBuffer()
 {
     SDL_GL_SwapWindow(m_SDL_Window);
+}
+
+int Window::GetScreenWidth() const
+{
+	return m_screenWidth;
+}
+    
+int Window::GetScreenHeight() const
+{
+	return m_screenHeight;
 }

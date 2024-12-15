@@ -1,2 +1,0 @@
-This is a log placeholder. Please, run the program :D
-(idk about that would the logger create a log.txt file and i just created it myself)
